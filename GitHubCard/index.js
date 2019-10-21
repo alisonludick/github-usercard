@@ -3,6 +3,19 @@
            https://api.github.com/users/<your name>
 */
 
+function getGithubData() {
+    debugger
+    axios.get('https://api.github.com/users/alisonludick')
+        .then(response => {
+            document.body.innerText = response.data.location;
+        })
+        .catch(error => {
+            document.body.innerText = error.message;
+        });
+}
+
+getGithubData();
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
